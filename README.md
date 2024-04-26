@@ -2,5 +2,5 @@
 
 ---
 
-* [Merzlyakov Kirill](https://github.com/KirillMerz)
-* [Lebedev Sergey Vyacheslav](https://github.com/LebedevSergeyVach)
+### [Merzlyakov Kirill](https://github.com/KirillMerz)
+### [Lebedev Sergey Vyacheslav](https://github.com/LebedevSergeyVach)
