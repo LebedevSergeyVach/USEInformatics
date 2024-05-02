@@ -10,7 +10,7 @@ def sum_numbers(number: int):
     return result
 
 
-def f(str: str):
+def f(str: str) -> str:
     while '1111' in str or '8888' in str:
         if '1111' in str:
             str = str.replace('1111', '88', 1)
@@ -20,5 +20,5 @@ def f(str: str):
     return str
 
 
-str = '8' * 45
-print(f(str))
+s = '8' * 45
+print(f(s))
