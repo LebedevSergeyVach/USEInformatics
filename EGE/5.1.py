@@ -32,3 +32,33 @@ for N in range(1_000_000):
         max_porno = max(max_porno, R)
 
 print(max_porno)
+
+# Одно из необычных формулировок
+
+def ml_ra(string: str) -> str:
+    answer = int(string) % 10
+
+    return str(answer)
+
+
+def func(N):
+    R = bin(N)[2:]
+
+    if R.count('1') % 2 != 0:
+        R = R + '1'
+    else:
+        R = R + '0'
+
+    R = str(int(R, 2))
+    R = R + ml_ra(R)
+
+    return int(R)
+
+
+for N in range(10 ** 10):
+    R = func(N)
+
+    if R > 1200:
+        print(R)
+        break
+
