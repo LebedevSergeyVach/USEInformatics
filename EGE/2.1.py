@@ -13,8 +13,8 @@ for x1, x2, x3, x4 in product([0, 1], repeat=4):
     )
 
     if len(tabl) == len(set(tabl)):
-        for permut in permutations('xyzw', row=4):
-            if all(func(**dict(zip(permut, row))) == row[-1] for row in tabl):
+        for permut in permutations('xyzw', r=4):
+            if all(func(**dict(zip(permut, r))) == r[-1] for r in tabl):
                 print(permut)
 
 
