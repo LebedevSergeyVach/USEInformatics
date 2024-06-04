@@ -1,21 +1,21 @@
 from itertools import product, permutations
 
 
-def f(x, y, w, z):
-    return int( (x or y) and (not (y == z)) and (not w) )
+def func(x, y, z, w):
+    return (x or ((not z) and w) or w) == (y and (not x) and w)
 
 
-for x1, x2, x3 in product([0, 1], repeat=3):
-    t = (
-        (1, x1, 1, x2, 1),
-        (0, 1, x2, 0, 1),
-        (x3, 1, 1, 0, 1)
+for x1, x2, x3, x4 in product([0, 1], repeat=4):
+    tabl = (
+        (1, x1, x2, 0, 1),
+        (1, x3, 0, 0, 1),
+        (0, 1, x4, 1, 1)
     )
 
-    if len(t) == len(set(t)):
-        for p in permutations('xywz', r=4):
-            if all( f ( **dict ( zip (p, r) ) ) == r[-1] for r in t ):
-                print(p)
+    if len(tabl) == len(set(tabl)):
+        for permut in permutations('xyzw', row=4):
+            if all(func(**dict(zip(permut, row))) == row[-1] for row in tabl):
+                print(permut)
 
 
 # Второй базовый вариант для составления таблицы истинности
