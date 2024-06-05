@@ -50,3 +50,31 @@ for i in range(10 ** 6, 10 ** 9 + 1):
 for i in range(1000008, 10 ** 8 + 1, div):
     if fnmatch(str(i), mask) and i % div == 0:
         print(i, i // div)
+
+
+from fnmatch import fnmatch
+
+
+mask = '*18??18'
+div_one = 18
+div_two = 1018
+
+
+def count_div(number: int) -> int:
+    count = 0
+    for i in range(1, number + 1):
+        if number % i == 0:
+            count += 1
+
+    return count
+
+
+for i in range(1, 10**9 + 1):
+    if i % div_one == 0 and i % div_two == 0:
+        # print(i)
+        break # 9162
+
+
+for i in range(1, 10**9 + 1):
+    if fnmatch(str(i), mask) and i % div_one == 0 and i % div_two == 0:
+        print(i, count_div(i))
