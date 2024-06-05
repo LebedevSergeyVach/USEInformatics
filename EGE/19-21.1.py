@@ -51,3 +51,21 @@ print(f'19 => {min([s for s in range(1, 435) if (not func(s, 1)) and func(s, 2)]
 print(f'20 => {sorted([s for s in range(1, 435) if (not func(s, 1)) and func(s, 3)])}')
 print(f'21 => {min([s for s in range(1, 435) if (not func(s, 2)) and func(s, 4)])}')
 """
+
+
+"""def func(s, m):
+    if s >= 512:
+        return not (m % 2)
+    if m == 0:
+        return 0
+
+    hods = [func(s + 2, m - 1), func(s + 3, m - 1), func(s + 4, m - 1),
+            func(s + 5, m - 1), func(s * 2, m - 1)]
+
+    return any(hods) if m % 2 else all(hods)
+
+
+print(f'19 => {max([s for s in  range(1, 512) if (not func(s, 1)) and func(s, 2)])}')
+print(f'20 => {sorted([s for s in range(1, 512) if (not func(s, 1)) and func(s, 3)])}')
+print(f'21 => {min([s for s in range(1, 512) if (not func(s, 2)) and func(s, 4)])}')
+"""
