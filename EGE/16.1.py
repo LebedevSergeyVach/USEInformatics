@@ -15,3 +15,22 @@ def f(n):
 
 
 print(f(2222/f(2182)))
+
+
+"""F(n) = n при n < 52;
+F(n) = 3 × F(n - 2) - n, если n >= 52.
+Чему равно значение выражения F(15127)//F(15099)?"""
+
+
+def F(n):
+    if n < 52:
+        return n
+    else:
+        result = n
+        while n >= 52:
+            result = 3 * result - n
+            n -= 2
+        return result
+
+
+print(F(15127)//F(15099))
