@@ -22,15 +22,18 @@ F(n) = 3 × F(n - 2) - n, если n >= 52.
 Чему равно значение выражения F(15127)//F(15099)?"""
 
 
+from functools import lru_cache
+
+
+@lru_cache(None)
 def F(n):
     if n < 52:
         return n
-    else:
-        result = n
-        while n >= 52:
-            result = 3 * result - n
-            n -= 2
-        return result
+    if n >= 52:
+        return 3 * F(n - 2) - n
 
+
+for n in range(100, 15000):
+    F(n)
 
 print(F(15127)//F(15099))
